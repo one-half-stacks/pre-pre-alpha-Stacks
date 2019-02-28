@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+html, body, div {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+
+  --theme-color: #9775fa;
+  --theme-color-light: #d0bfff;
+  --theme-color-dark: #7950f2;
+}
+
+#app {
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-bottom: 150px;
+}
+
+#header {
+  padding: 0 30px;
+  padding-top: 30px;
+  height: 120px;
+  font-size: 150%;
+  background-color: var(--theme-color-dark);
+  color: white;
+  margin-bottom: 30px;
+}
+
+/* Adjust Bootstrap defaults */
+
+.card {
+  border-radius: 0;
+}

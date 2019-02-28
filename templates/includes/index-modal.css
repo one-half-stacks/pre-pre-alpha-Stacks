@@ -1,0 +1,16 @@
+#new-page-modal-content {
+  border-radius: 0;
+  border: none;
+  border-top: 10px solid var(--theme-color-dark);
+  border-bottom: 10px solid var(--theme-color-dark);
+}
+
+#new-page-modal-content button {
+  border: none;
+  font-size: 110%;
+}
+
+#new-page-modal-content button.btn-primary {
+  background-color: var(--theme-color-dark);
+  color: white;
+}

@@ -1,0 +1,37 @@
+<html><head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/><link rel="stylesheet" href="./css/base.css"/><link rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"/><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script><script>// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDGiB--8RzYjLzuGqjnYNoQyPK_jiQw0gc",
+  authDomain: "stacks-f07ac.firebaseapp.com",
+  databaseURL: "https://stacks-f07ac.firebaseio.com",
+  projectId: "stacks-f07ac",
+  storageBucket: "",
+  messagingSenderId: "920166919225"
+};
+firebase.initializeApp(config);
+</script><script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script>initApp = function () {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User signed in
+      Cookies.set('username', user.displayName)
+      Cookies.set('uid', user.uid)
+    } else {
+      // User signed out
+      window.location.href = './welcome.html'
+    }
+  }, function(error) {
+    console.log(error)
+  })
+}
+window.addEventListener('load', function() { initApp() })
+</script></head><body><div id="app"><div id="header"><span><img src="./logo-256-invert.png" width="60px"/></span><span class="float-right" id="header-user" style="margin-top: 30px"></span><script>var currentUsername = Cookies.get('username')
+var currentUID = Cookies.get('uid')
+if (currentUID !== undefined) {
+  var headerDisplay = ''
+  if (currentUsername === 'null')
+    headerDisplay = currentUID
+  else
+    headerDisplay = currentUsername
+  if (headerDisplay.length > 12)
+    headerDisplay = headerDisplay.substring(0, 12)
+  document.getElementById('header-user').innerHTML = headerDisplay
+}</script></div><div class="row" id="main" style="margin: 0;"><div class="col-4" style="padding: 20px; height: 600px;"><div class="column" style="background-color: var(--theme-color-light); width: 100%; height: 300px;"></div></div><div class="col-4" style="padding: 20px; height: 600px;"><div class="column" style="background-color: var(--theme-color-light); width: 100%; height: 300px;"></div></div><div class="col-4" style="padding: 20px; height: 600px;"><div class="column" style="background-color: var(--theme-color-light); width: 100%; height: 300px;"></div></div></div></div></body></html>

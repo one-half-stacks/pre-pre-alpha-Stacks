@@ -1,0 +1,45 @@
+html
+  head
+    link(rel='stylesheet',href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+    link(rel='stylesheet',href='./css/base.css')
+    link(rel='stylesheet',href='https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css')
+
+    link(rel='stylesheet',href='./css/index.css')
+
+    script(src="https://code.jquery.com/jquery-3.3.1.min.js",integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=",crossorigin="anonymous")
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+    script(src='https://www.gstatic.com/firebasejs/5.8.3/firebase.js')
+    script
+      include includes/initFirebase.js
+    script(src='https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js')
+
+    script(src='https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js')
+
+    script
+      include includes/initApp.js
+
+    style
+      include includes/index-modal.css
+
+  body
+    div#app
+      include includes/header
+
+      div#main
+        div#pages
+          div.row.no-gutters
+
+    div#new-page-modal.modal.fade(tabindex='-1',role='dialog',aria-labelledby='',aria-hidden='true')
+      div.modal-dialog.modal-dialog-centered(role='document')
+        div.modal-content#new-page-modal-content
+          div.modal-header
+            h5#new-page-modal-title.modal-title Create New Page
+            button.close(type='button',aria-label='Close',data-dismiss='modal')
+              span(aria-hidden='true') &times;
+          div.modal-body.
+            Something Something Something
+          div.modal-footer
+            button.btn.btn-secondary(type='button',data-dismiss='modal') Close
+            button.btn.btn-primary(type='button') Save
+
+    script(src='./js/pages.js')

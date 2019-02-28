@@ -1,0 +1,18 @@
+div#header
+  span
+    img(src='./logo-256-invert.png',width='60px')
+  span.float-right#header-user(style='margin-top: 30px')
+
+  script.
+    var currentUsername = Cookies.get('username')
+    var currentUID = Cookies.get('uid')
+    if (currentUID !== undefined) {
+      var headerDisplay = ''
+      if (currentUsername === 'null')
+        headerDisplay = currentUID
+      else
+        headerDisplay = currentUsername
+      if (headerDisplay.length > 12)
+        headerDisplay = headerDisplay.substring(0, 12)
+      document.getElementById('header-user').innerHTML = headerDisplay
+    }
